@@ -1,0 +1,13 @@
+.env
+.venv/
+.git/
+__pycache__/
+.pytest_cache/
+pytest-cache-files-*/
+data/
+outbox/
+tests/
+docs/
+scripts/
+# audit_action
+# build_query
