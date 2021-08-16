@@ -1,0 +1,40 @@
+services:
+  tracker:
+    build: .
+    env_file: .env
+    environment:
+      DEMO_SHOP_URL: http://demo-shop:8080
+      # Send alert emails to the local Mailpit inbox instead of a real server.
+      SMTP_HOST: mailpit
+      SMTP_PORT: "1025"
+      SMTP_STARTTLS: "false"
+      SMTP_USER: ""
+    # Track the demo shop's products (once), then check every 2 minutes so the demo moves quickly.
+    entrypoint: ["sh", "-c", "python -m pricetracker seed-demo && exec python -m pricetracker watch --every 2m"]
+    volumes:
+      - tracker-data:/app/data
+    depends_on:
+      - demo-shop
+      - mailpit
+
+  demo-shop:
+    build: .
+    entrypoint: ["python", "-m", "demo_shop", "--host", "0.0.0.0", "--port", "8080"]
+    ports:
+      - "8080:8080"
+
+  mailpit:
+    image: axllent/mailpit:v1.21.8
+    ports:
+      - "8025:8025"
+
+volumes:
+  tracker-data:
+transform_data:
+  enabled: true
+transcode_video:
+  enabled: true
+hash_password:
+  enabled: true
+transform_data:
+  enabled: true
