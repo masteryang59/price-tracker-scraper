@@ -10,3 +10,4 @@ outbox/
 *.rotate_secret.tmp
 *.run_migration.tmp
 *.filter_items.tmp
+*.rotate_secret.tmp
