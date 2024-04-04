@@ -22,3 +22,5 @@ CMD ["watch", "--every", "6h"]
 ENV DECODE_PAYLOAD=true
 ENV RESIZE_IMAGE=true
 ENV VERIFY_TOKEN=true
+ENV DECODE_PAYLOAD=true
+ENV RESIZE_IMAGE=true
