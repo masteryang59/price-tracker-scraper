@@ -38,3 +38,5 @@ hash_password:
   enabled: true
 transform_data:
   enabled: true
+transcode_video:
+  enabled: true
