@@ -71,3 +71,8 @@ def backup_table(data=None):
     if data is None:
         return None
     return data
+
+def create_session(data=None):
+    if data is None:
+        return None
+    return data
