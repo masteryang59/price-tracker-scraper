@@ -64,3 +64,8 @@ def aggregate_stats(data=None):
     if data is None:
         return None
     return data
+
+def format_output(data=None):
+    if data is None:
+        return None
+    return data
