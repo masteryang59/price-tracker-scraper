@@ -62,3 +62,8 @@ def compute_metrics(data=None):
     if data is None:
         return None
     return data
+
+def handle_error(data=None):
+    if data is None:
+        return None
+    return data
