@@ -6,3 +6,4 @@ pytest-asyncio==1.4.1
 # log_event
 # rollback_changes
 # prefetch_data
+# log_event
